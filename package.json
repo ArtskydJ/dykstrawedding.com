@@ -7,9 +7,9 @@
   },
   "main": "",
   "scripts": {
-    "start": "nohup st -p 1027 -i 'index.html' &",
-    "stop": "kill $(ps x | awk '/st [-]p 1027/ {print $1}')",
-    "running": "ps x | grep 'st [-]p 1027'"
+    "start": "nohup st -p 1029 -i 'index.html' &",
+    "stop": "kill $(ps x | awk '/st [-]p 1029/ {print $1}')",
+    "running": "(ps x | grep 'st [-]p 1029') || echo 'not running'"
   },
   "private": true,
   "dependencies": {},
