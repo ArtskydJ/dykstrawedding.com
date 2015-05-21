@@ -7,7 +7,7 @@
   },
   "main": "",
   "scripts": {
-    "start": "nohup ecstatic -p 1020 -i 'index.html' &",
+    "start": "nohup ecstatic -p 1020 &",
     "stop": "kill $(ps x | awk '/ecstatic [-]p 1020/ {print $1}')",
     "running": "(ps x | grep 'ecstatic [-]p 1020') || echo 'not running'"
   },
