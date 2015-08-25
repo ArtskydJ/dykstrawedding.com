@@ -6,13 +6,8 @@
     "url": "https://github.com/ArtskydJ/dykstrawedding.git"
   },
   "main": "",
-  "scripts": {
-    "start": "psy start -n dykstrawedding -- ecstatic -p 1020",
-    "stop": "psy stop dykstrawedding"
-  },
+  "scripts": {},
   "private": true,
   "dependencies": {},
-  "devDependencies": {
-    "psy": "^1.4.5"
-  }
+  "devDependencies": {}
 }
