@@ -1,0 +1,14 @@
+body {
+	font-family: Arial;
+	background-color: #000;
+	color: #fff;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	height: 100vh;
+	line-height: 1;
+	margin: 0;
+}
+@media screen and (min-width: 1025px) { body { font-size: 72pt; }}
+@media screen and (max-width: 1024px) { body { font-size: 48pt; }}
+@media screen and (max-width: 600px)  { body { font-size: 24pt; }}

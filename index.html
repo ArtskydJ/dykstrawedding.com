@@ -4,20 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="description" content="A countdown for the win.">
 		<title>Wedding Countdown</title>
-		<style type="text/css">
-			body {
-				font-size: 72pt;
-				font-family: Arial;
-				background-color: #000;
-				color: #fff;
-				display: flex;
-				text-align: center;
-				align-items: center;
-				height: 100vh;
-				line-height: 1;
-				margin: 0;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="./style.css">
 	</head>
 	<body>
 		<div id="container">
@@ -25,28 +12,6 @@
 			<hr>
 			<div id="michael-elizabeth"></div>
 		</div>
-		<script src="./countdown.min.js"></script>
-		<script>
-			function makeCountdown(selector, dateStr, happyCouple) {
-				var wedding = new Date(dateStr)
-				var ele = document.querySelector(selector)
-	
-				function setCountdown() {
-					var down = window.countdown(null, wedding)
-					var countingDown = down.value > 0
-					
-					ele.innerHTML = countingDown ?
-						down.toString() + ' until ' + happyCouple + '\'s wedding!!!' :
-						'Congratulations ' + happyCouple + '!!!'
-					
-					return countingDown
-				}
-	
-				setCountdown() && setInterval(setCountdown, 1000)
-			}
-			
-			makeCountdown('#seth-laura', '2015 May 16 12:00 cst', 'Seth and Laura')
-			makeCountdown('#michael-elizabeth', '2015 November 20 12:00 cst', 'Michael and Elizabeth')
-		</script>
-	 </body>
- </html>
+		<script src="./bundle.js"></script>
+	</body>
+</html>

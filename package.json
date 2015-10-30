@@ -1,0 +1,28 @@
+{
+  "name": "dykstrawedding.com",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "src/index.js",
+  "dependencies": {
+    "countdown": "^2.6.0"
+  },
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "uglify-js": "^2.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify . | uglifyjs - -m -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtskydJ/dykstrawedding.com.git"
+  },
+  "author": "Joseph Dykstra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArtskydJ/dykstrawedding.com/issues"
+  },
+  "homepage": "https://github.com/ArtskydJ/dykstrawedding.com#readme"
+}
