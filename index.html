@@ -21,10 +21,15 @@
 				align-items: center;
 			}
 			div.couple + div.couple {
-			    border-top: 1px solid white;
+				border-top: 1px solid #888;
 			}
 			div.couple {
-			    padding: 32px 8px;
+				padding: 32px 8px;
+				width: 100%;
+				box-sizing: border-box;
+			}
+			div.couple.past {
+				color: #888;
 			}
 		</style>
 	</head>
@@ -44,9 +49,11 @@
 				var ele = document.querySelector(selector)
 
 				function onCount(down) {
-					ele.innerHTML = (down.value > 0) ?
-						down.toString() + ' until ' + happyCouple + '\'s wedding!!!' :
-						'Congratulations ' + happyCouple + '!!!'
+					if (down.value > (-10 * 1000)) {
+						ele.innerHTML = (down.value > 0) ?
+							down.toString() + ' until ' + happyCouple + '\'s wedding!' :
+							'<span class="past">Congratulations ' + happyCouple + '!</span>'
+					}
 				}
 
 				window.countdown(onCount, new Date(dateStr))
