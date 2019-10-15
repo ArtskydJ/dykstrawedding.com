@@ -47,12 +47,14 @@
 		<script>
 			function makeCountdown(selector, dateStr, happyCouple) {
 				var ele = document.querySelector(selector)
+				var countingDown = true
 
 				function onCount(down) {
-					if (down.value > (-10 * 1000)) {
-						ele.innerHTML = (down.value > 0) ?
-							down.toString() + ' until ' + happyCouple + '\'s wedding!' :
-							'<span class="past">Congratulations ' + happyCouple + '!</span>'
+					if (countingDown) {
+						var html = down.toString() + ' until ' + happyCouple + '\'s wedding!'
+						countingDown = down.value > 0
+						if (! countingDown) html = '<span class="past">Congratulations ' + happyCouple + '!</span>'
+						ele.innerHTML = html
 					}
 				}
 
