@@ -4,7 +4,29 @@
 		<meta charset="utf-8">
 		<meta name="description" content="A countdown for the win.">
 		<title>Wedding Countdown</title>
-		<link rel="stylesheet" type="text/css" href="./style.css">
+		<style>
+			body {
+				font-family: Arial;
+				background-color: #000;
+				color: #fff;
+				margin: 0;
+				font-size: 72pt;
+			}
+			@media screen and (max-width: 1024px) { body { font-size: 48pt; }}
+			@media screen and (max-width: 600px)  { body { font-size: 24pt; }}
+			#container {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
+			}
+			div.couple + div.couple {
+			    border-top: 1px solid white;
+			}
+			div.couple {
+			    padding: 32px 8px;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="container">
@@ -15,6 +37,7 @@
 			<div class="couple" id="david-ruth"></div>
 			<div class="couple" id="jordon-jessica"></div>
 		</div>
+		
 		<script src="./src/countdown@2.6.0.js"></script>
 		<script>
 			function makeCountdown(selector, dateStr, happyCouple) {
