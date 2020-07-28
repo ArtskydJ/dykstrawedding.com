@@ -45,15 +45,20 @@
 		
 		<script src="./countdown@2.6.0.js"></script>
 		<script>
-			function makeCountdown(selector, dateStr, happyCouple) {
+			function makeCountdown(selector, dateStr, happyCouple, isEngagementDate) {
 				var ele = document.querySelector(selector)
-				var countingDown = true
+				var counting = true
 
 				function onCount(down) {
-					if (countingDown) {
-						var html = down.toString() + ' until ' + happyCouple + '\'s wedding!'
-						countingDown = down.value > 0
-						if (! countingDown) html = '<span class="past">Congratulations ' + happyCouple + '!</span>'
+					if (counting) {
+						var html = ''
+						if (isEngagementDate) {
+							html = down.toString() + ' since ' + happyCouple + '\'s engagement!'
+						} else {
+							html = down.toString() + ' until ' + happyCouple + '\'s wedding!'
+							counting = down.value > 0
+							if (! counting) html = '<span class="past">Congratulations ' + happyCouple + '!</span>'
+						}
 						ele.innerHTML = html
 					}
 				}
