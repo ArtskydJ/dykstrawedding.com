@@ -28,25 +28,22 @@
 				width: 100%;
 				box-sizing: border-box;
 			}
-			div.couple .past {
+			div.couple.past {
 				color: #888;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="container">
-			<div class="couple" id="levi-hannah"></div>
-			<div class="couple" id="micah-rebecca"></div>
-			<div class="couple" id="michael-elizabeth"></div>
-			<div class="couple" id="seth-laura"></div>
-			<div class="couple" id="david-ruth"></div>
-			<div class="couple" id="jordon-jessica"></div>
-		</div>
+		<div id="container"></div>
 		
 		<script src="./countdown@2.6.0.js"></script>
 		<script>
+			var containerEle = document.querySelector('.container')
+
 			function makeCountdown(selector, dateStr, happyCouple, isEngagementDate) {
-				var ele = document.querySelector(selector)
+				var ele = document.createElement('div')
+				ele.classList.add('couple')
+				ele.id = selector
 				var counting = true
 
 				function onCount(down) {
@@ -57,13 +54,18 @@
 						} else {
 							html = down.toString() + ' until ' + happyCouple + '\'s wedding!'
 							counting = down.value > 0
-							if (! counting) html = '<span class="past">Congratulations ' + happyCouple + '!</span>'
+							if (! counting) {
+								ele.classList.add('past')
+								html = 'Congratulations ' + happyCouple + '!'
+							}
 						}
 						ele.innerHTML = html
 					}
 				}
 
 				window.countdown(onCount, new Date(dateStr))
+
+				containerEle.insertBefore(ele, containerEle.firstChild)
 			}
 
 			makeCountdown('#jordon-jessica', '2008 August 16 16:00 CDT', 'Jordon and Jessica')
